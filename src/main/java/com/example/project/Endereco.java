@@ -2,6 +2,8 @@ package com.example.project;
 
 public class Endereco {
 
+    private String BREAK = System.lineSeparator();
+
     private String logradouro;
     private int numero;
     private String complemento;
@@ -73,11 +75,11 @@ public class Endereco {
         String _BAIRRO = isNullOrEmpty(this.bairro) ? "" : this.bairro + " - ";
         String _texto = "";
         if (this.getNumero() == 0){
-            _texto += String.format("%s, %s%s\n",this.getLogradouro(),"s/n",_COMPLEMENTO);
+            _texto += String.format("%s, %s%s" + BREAK,this.getLogradouro(),"s/n",_COMPLEMENTO);
         } else {
-            _texto += String.format("%s, %d%s\n",this.getLogradouro(),this.getNumero(),_COMPLEMENTO);
+            _texto += String.format("%s, %d%s" + BREAK,this.getLogradouro(),this.getNumero(),_COMPLEMENTO);
         }
-        _texto += String.format("%s%s - %s\n",_BAIRRO,this.getMunicipio(),this.getEstado());
+        _texto += String.format("%s%s - %s"+ BREAK,_BAIRRO,this.getMunicipio(),this.getEstado());
 
         return _texto;
     }

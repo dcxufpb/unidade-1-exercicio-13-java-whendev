@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Loja {
+    private String BREAK = System.lineSeparator();
 
     private String nomeLoja;
     private Endereco endereco;
@@ -110,12 +111,12 @@ public class Loja {
         }
 
         String _texto = "";
-        _texto = String.format("%s\n",this.getNomeLoja());
+        _texto = String.format("%s" + BREAK,this.getNomeLoja());
         _texto += endereco.dadosEndereco();
-        _texto += String.format("%s%s\n",_CEP,_TELEFONE);
-        _texto += String.format("%s\n",_OBSERVACAO);
-        _texto += String.format("CNPJ: %s\n",this.getCnpj());
-        _texto += String.format("IE: %s\n",this.getInscricaoEstadual());
+        _texto += String.format("%s%s" + BREAK,_CEP,_TELEFONE);
+        _texto += String.format("%s" + BREAK,_OBSERVACAO);
+        _texto += String.format("CNPJ: %s" + BREAK,this.getCnpj());
+        _texto += String.format("IE: %s" + BREAK,this.getInscricaoEstadual());
         return _texto;
 	}
 

@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Venda {
+    private String BREAK = System.lineSeparator();
     private Date datahora;
     private String ccf;
     private String coo;
@@ -46,6 +47,6 @@ public class Venda {
         String dadosLoja = this.loja.dadosLoja();
         String dadosVenda = this.dadosVenda();
 
-        return String.format("%s------------------------------\n%s",dadosLoja,dadosVenda);
+        return String.format("%s------------------------------%s%s",dadosLoja,this.BREAK,dadosVenda);
     }
 }
