@@ -110,12 +110,12 @@ public class Loja {
         }
 
         String _texto = "";
-        _texto = String.format("%s\r\n",this.getNomeLoja());
+        _texto = String.format("%s\n",this.getNomeLoja());
         _texto += endereco.dadosEndereco();
-        _texto += String.format("%s%s\r\n",_CEP,_TELEFONE);
-        _texto += String.format("%s\r\n",_OBSERVACAO);
-        _texto += String.format("CNPJ: %s\r\n",this.getCnpj());
-        _texto += String.format("IE: %s\r\n",this.getInscricaoEstadual());
+        _texto += String.format("%s%s\n",_CEP,_TELEFONE);
+        _texto += String.format("%s\n",_OBSERVACAO);
+        _texto += String.format("CNPJ: %s\n",this.getCnpj());
+        _texto += String.format("IE: %s\n",this.getInscricaoEstadual());
         return _texto;
 	}
 

@@ -46,6 +46,6 @@ public class Venda {
         String dadosLoja = this.loja.dadosLoja();
         String dadosVenda = this.dadosVenda();
 
-        return String.format("%s------------------------------\r\n%s",dadosLoja,dadosVenda);
+        return String.format("%s------------------------------\n%s",dadosLoja,dadosVenda);
     }
 }

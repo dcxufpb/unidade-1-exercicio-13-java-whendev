@@ -73,11 +73,11 @@ public class Endereco {
         String _BAIRRO = isNullOrEmpty(this.bairro) ? "" : this.bairro + " - ";
         String _texto = "";
         if (this.getNumero() == 0){
-            _texto += String.format("%s, %s%s\r\n",this.getLogradouro(),"s/n",_COMPLEMENTO);
+            _texto += String.format("%s, %s%s\n",this.getLogradouro(),"s/n",_COMPLEMENTO);
         } else {
-            _texto += String.format("%s, %d%s\r\n",this.getLogradouro(),this.getNumero(),_COMPLEMENTO);
+            _texto += String.format("%s, %d%s\n",this.getLogradouro(),this.getNumero(),_COMPLEMENTO);
         }
-        _texto += String.format("%s%s - %s\r\n",_BAIRRO,this.getMunicipio(),this.getEstado());
+        _texto += String.format("%s%s - %s\n",_BAIRRO,this.getMunicipio(),this.getEstado());
 
         return _texto;
     }
