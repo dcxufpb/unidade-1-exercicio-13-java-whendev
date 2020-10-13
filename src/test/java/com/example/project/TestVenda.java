@@ -12,9 +12,9 @@ public class TestVenda {
 
     private String BREAK = System.lineSeparator();
 
-    private String dataRecebida = "13/10/2020 15:39:00";
-    private SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy H:m:s");
-    private Date dataFormatada = formato.parse(dataRecebida);
+    private String dataRecebida;
+    private SimpleDateFormat formato;
+    private Date dataFormatada;
 
     private String ccf = "021784";
     private String coo = "035804";
@@ -35,9 +35,12 @@ public class TestVenda {
 
     private String TEXTO_ESPERADO_CUPOM_COMPLETO = "Loja 1" + BREAK + "Log 1, 10 C1" + BREAK + "Bai 1 - Mun 1 - E1"
             + BREAK + "CEP:11111-111 Tel (11) 1111-1111" + BREAK + "Obs 1" + BREAK + "CNPJ: 11.111.111/1111-11" + BREAK
-            + "IE: 123456789" + BREAK + "------------------------------" + BREAK + "13/10/2020 15:39:0V CCF:021784 COO: 035804";
+            + "IE: 123456789" + BREAK + "------------------------------" + BREAK + "23/11/2015 15:39:0V CCF:021784 COO: 035804";
 
     public TestVenda() throws ParseException {
+        this.dataRecebida = "23/11/2015 15:39:00";
+        this.formato = new SimpleDateFormat("dd/MM/yyyy H:m:s");
+        this.dataFormatada = formato.parse(dataRecebida);
     }
 
 
@@ -86,4 +89,9 @@ public class TestVenda {
             assertEquals(mensagemEsperada, e.getMessage());
         }
     }
+
+//    @Test
+//	public void validarX() {
+//        fail();
+//    }
 }
