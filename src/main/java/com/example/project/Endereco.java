@@ -2,6 +2,8 @@ package com.example.project;
 
 public class Endereco {
 
+    private String BREAK = System.lineSeparator();
+
     private String logradouro;
     private int numero;
     private String complemento;
@@ -48,5 +50,37 @@ public class Endereco {
         return this.cep;
     }
 
+    public static Boolean isNullOrEmpty(String s) {
+        return s == null || s.isEmpty();
+    }
 
+    public void validarCamposObrigatorio(){
+
+        if (isNullOrEmpty(this.getLogradouro())){
+            throw new RuntimeException("O campo logradouro do endereço é obrigatório");
+        }
+
+        if (isNullOrEmpty(this.getMunicipio())){
+            throw new RuntimeException("O campo município do endereço é obrigatório");
+        }
+
+        if (isNullOrEmpty(this.getEstado())){
+            throw new RuntimeException("O campo estado do endereço é obrigatório");
+        }
+    }
+
+    public String dadosEndereco() {
+        validarCamposObrigatorio();
+        String _COMPLEMENTO = isNullOrEmpty(this.complemento) ? "" : " " + this.complemento ;
+        String _BAIRRO = isNullOrEmpty(this.bairro) ? "" : this.bairro + " - ";
+        String _texto = "";
+        if (this.getNumero() == 0){
+            _texto += String.format("%s, %s%s" + BREAK,this.getLogradouro(),"s/n",_COMPLEMENTO);
+        } else {
+            _texto += String.format("%s, %d%s" + BREAK,this.getLogradouro(),this.getNumero(),_COMPLEMENTO);
+        }
+        _texto += String.format("%s%s - %s"+ BREAK,_BAIRRO,this.getMunicipio(),this.getEstado());
+
+        return _texto;
+    }
 }

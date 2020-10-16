@@ -238,25 +238,31 @@ public class TestLoja {
 	@Test
 	public void exercicio02_Customizado() {
 		// Defina seus próprios valores para as variáveis a seguir
-		String nomeLoja = "";
-		String logradouro = "";
-		int numero = 0;
+		String nomeLoja = "LOJAS AMERICANAS S.A.";
+		String logradouro = "R SACADURA CABRAL";
+		int numero = 102;
 		String complemento = "";
-		String bairro = "";
-		String municipio = "";
-		String estado = "";
-		String cep = "";
-		String telefone = "";
-		String observacao = "";
-		String cnpj = "";
-		String inscricaoEstadual = "";
+		String bairro = "GAMBOA";
+		String municipio = "RIO DE JANEIRO";
+		String estado = "RJ";
+		String cep = "20.221-160";
+		String telefone = "(21) 2206-6708";
+		String observacao = "47.11-3-02 Comercio varejista de mercadorias em geral";
+		String cnpj = "33.014.556/0001-96";
+		String inscricaoEstadual = "85.687.08-5";
 
 		Loja lojaCustomizada = new Loja(nomeLoja,
 				new Endereco(logradouro, numero, complemento, bairro, municipio, estado, cep), telefone, observacao,
 				cnpj, inscricaoEstadual);
 
 		// E atualize o texto esperado abaixo
-		rodarTestarRetorno("" + BREAK, lojaCustomizada);
+		rodarTestarRetorno("LOJAS AMERICANAS S.A." + BREAK +
+				"R SACADURA CABRAL, 102" + BREAK +
+				"GAMBOA - RIO DE JANEIRO - RJ" + BREAK +
+				"CEP:20.221-160 Tel (21) 2206-6708" + BREAK +
+				"47.11-3-02 Comercio varejista de mercadorias em geral" + BREAK +
+				"CNPJ: 33.014.556/0001-96" + BREAK +
+				"IE: 85.687.08-5" + BREAK, lojaCustomizada);
 	}
 
 	private void rodarTestarRetorno(String expected, Loja loja) {
